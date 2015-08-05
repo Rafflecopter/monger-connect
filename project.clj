@@ -1,4 +1,4 @@
-(defproject monger-connect "0.1.0-SNAPSHOT"
+(defproject monger-connect "0.1.0"
   :description "Making it easier to connect with monger"
   :url "http://github.com/Rafflecopter/monger-connect"
   :license {:name "MIT"
