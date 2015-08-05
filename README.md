@@ -4,7 +4,7 @@
 
 [![Clojars Project](http://clojars.org/com.rafflecopter/monger-connect/latest-version.svg)](http://clojars.org/com.rafflecopter/monger-connect)
 
-A Clojure library designed to make using monger easier.
+A Clojure library designed to make connecting with monger easier.
 
 ## Usage
 
@@ -27,7 +27,7 @@ For a single server:
  :port 27017
  :dbname "test"
  :options {:write-concern 1}}
-``
+```
 
 `:options` can either be a map of options into `monger.core/mongo-options-builder` or a `MongoClientOptions` object you built yourself.
 
