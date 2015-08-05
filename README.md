@@ -1,5 +1,9 @@
 # monger-connect
 
+[![Build Status](https://travis-ci.org/Rafflecopter/monger-connect.svg?branch=master)](https://travis-ci.org/Rafflecopter/monger-connect)
+
+[![Clojars Project](http://clojars.org/com.rafflecopter/monger-connect/latest-version.svg)](http://clojars.org/com.rafflecopter/monger-connect)
+
 A Clojure library designed to make using monger easier.
 
 ## Usage
