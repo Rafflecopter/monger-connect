@@ -23,10 +23,10 @@
         creds (if user (mcred/create user (or auth-dbname dbname) pass))
         conn  (if creds (mg/connect addrs options creds) (mg/connect addrs options))
         dbref (mg/get-db conn dbname)]
-    (swap! -dbs assoc cfg dbref)))
+    (swap! -dbs assoc cfg dbref)
+    dbref))
 
 (defmacro wmong [cfg & forms]
   `(let [cfg# ~cfg]
-      (if-not (get-db cfg#) (connect cfg#))
-      (binding [db (get-db cfg#)]
-        ~@forms)))
+     (binding [db (if-let [db# (get-db cfg#)] db# (connect cfg#))]
+       ~@forms)))
