@@ -20,7 +20,7 @@
         options (cond (map? options) (mg/mongo-options options)
                       (instance? MongoClientOptions options) options
                       :else (mg/mongo-options {}))
-        creds (if user (mcred/create user (or auth-dbname dbname) pass))
+        creds (if (not-empty user) (mcred/create user (or auth-dbname dbname) pass))
         conn  (if creds (mg/connect addrs options creds) (mg/connect addrs options))
         dbref (mg/get-db conn dbname)]
     (swap! -dbs assoc cfg dbref)
